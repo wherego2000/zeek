@@ -211,6 +211,10 @@ TEST_CASE("dict new iteration")
 
 	CHECK(count == 2);
 
+	for ( const auto& [k, v] : dict )
+		{
+		}
+
 	delete key;
 	delete key2;
 	}

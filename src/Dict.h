@@ -19,6 +19,10 @@
 namespace zeek {
 	template <typename T> class IterCookie;
 	template <typename T> class Dictionary;
+
+namespace detail {
+	template <typename T> class DictEntry;
+}
 }
 
 //ZEEK_FORWARD_DECLARE_NAMESPACED(IterCookie, zeek);
@@ -26,6 +30,17 @@ namespace zeek {
 
 // Type for function to be called when deleting elements.
 typedef void (*dict_delete_func)(void*);
+
+namespace std {
+	template<typename T>
+	struct std::tuple_size<zeek::detail::DictEntry<T>>
+		{
+		static const size_t value = 2;
+		};
+
+	template<typename T> struct tuple_element<0, zeek::detail::DictEntry<T>> { using type = zeek::detail::HashKey; };
+	template<typename T> struct tuple_element<1, zeek::detail::DictEntry<T>> { using type = T*; };
+}
 
 namespace zeek {
 
@@ -89,6 +104,8 @@ public:
 		char key_here[8]; //hold key len<=8. when over 8, it's a pointer to real keys.
 		char* key;
 	};
+
+	DictEntry() : DictEntry(nullptr) {}
 
 	DictEntry(void* arg_key, int key_size = 0, hash_t hash = 0, T* value = nullptr,
 	          int16_t d = TOO_FAR_TO_REACH, bool copy_key = false)
@@ -156,6 +173,17 @@ public:
 	bool operator!=(const DictEntry& r) const
 		{
 		return ! Equal(r.GetKey(), r.key_size, r.hash);
+		}
+
+	template<size_t N> auto& get() &
+		{
+		if constexpr (N == 0) return GetHashKey();
+		else if constexpr (N == 1) return value;
+		}
+	template<size_t N> auto const& get() const&
+		{
+		if constexpr (N == 0) return GetHashKey();
+		else if constexpr (N == 1) return value;
 		}
 };
 
