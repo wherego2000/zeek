@@ -1,5 +1,9 @@
 #!/bin/sh
 
+date
+sudo sntp -sS time.apple.com
+date
+
 echo "Preparing macOS environment"
 sysctl hw.model hw.machine hw.ncpu hw.physicalcpu hw.logicalcpu
 set -e
