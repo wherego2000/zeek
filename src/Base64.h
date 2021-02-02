@@ -3,8 +3,12 @@
 #include "zeek/zeek-config.h"
 #include <string>
 
-namespace zeek { class String; }
-ZEEK_FORWARD_DECLARE_NAMESPACED(Connection, zeek);
+namespace zeek {
+
+class String;
+class Connection;
+
+} // namespace zeek
 
 namespace zeek::detail {
 

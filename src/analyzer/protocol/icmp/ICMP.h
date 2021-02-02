@@ -6,10 +6,12 @@
 #include "zeek/analyzer/Analyzer.h"
 #include "zeek/net_util.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(VectorVal, zeek);
 namespace zeek {
+
+class VectorVal;
 using VectorValPtr = IntrusivePtr<VectorVal>;
-}
+
+} // namespace zeek
 
 namespace zeek::analyzer::icmp {
 

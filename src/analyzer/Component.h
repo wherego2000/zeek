@@ -10,10 +10,11 @@
 
 #include "zeek/util.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(Connection, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Analyzer, zeek, analyzer);
+namespace zeek { class Connection; }
 
 namespace zeek::analyzer {
+
+class Analyzer;
 
 /**
  * Component description for plugins providing analyzers.

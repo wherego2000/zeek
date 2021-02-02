@@ -8,7 +8,7 @@
                         bits than the mantissa of your "double"
                         floating point type. */
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(EntropyVal, zeek);
+namespace zeek { class EntropyVal; }
 
 namespace zeek::detail {
 

@@ -5,7 +5,8 @@
 #include "zeek/Frame.h"
 #include "zeek/Expr.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(ODesc, zeek);
+namespace zeek { class ODesc; }
+
 namespace zeek::threading {
 	struct Value;
 	struct Field;

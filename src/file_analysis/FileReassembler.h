@@ -4,12 +4,16 @@
 
 #include "zeek/Reassem.h"
 
-namespace zeek { class File; }
+namespace zeek {
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(Connection, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(File, zeek, file_analysis);
+class Connection;
+class File;
+
+} // namespace zeek
 
 namespace zeek::file_analysis {
+
+class File;
 
 class FileReassembler final : public Reassembler {
 public:

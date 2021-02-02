@@ -5,7 +5,7 @@
 #include "zeek/zeek-config.h"
 #include <string>
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(Packet, zeek);
+namespace zeek { class Packet; }
 
 namespace zeek::iosource {
 

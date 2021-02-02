@@ -14,11 +14,12 @@
 #include "zeek/ID.h"
 #include "zeek/util.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(TypeDecl, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(PackageInfo, zeek, zeekygen, detail);
-ZEEK_FORWARD_DECLARE_NAMESPACED(ScriptInfoInfo, zeek, zeekygen, detail);
+namespace zeek { class TypeDecl; }
 
 namespace zeek::zeekygen::detail {
+
+class PackageInfo;
+class ScriptInfoInfo;
 
 /**
  * Map of info objects.  Just a wrapper around std::map to improve code

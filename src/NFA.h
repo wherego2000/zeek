@@ -5,10 +5,6 @@
 #include "zeek/Obj.h"
 #include "zeek/List.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(CCL, zeek::detail);
-ZEEK_FORWARD_DECLARE_NAMESPACED(EquivClass, zeek::detail);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Func, zeek);
-
 #define NO_ACCEPT 0
 
 #define NO_UPPER_BOUND -1
@@ -20,7 +16,12 @@ ZEEK_FORWARD_DECLARE_NAMESPACED(Func, zeek);
 #define SYM_EPSILON 259
 #define SYM_CCL 260
 
+namespace zeek { class Func; }
+
 namespace zeek::detail {
+
+class CCL;
+class EquivClass;
 
 class NFA_State;
 using NFA_state_list = PList<NFA_State>;

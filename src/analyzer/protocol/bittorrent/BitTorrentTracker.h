@@ -6,7 +6,7 @@
 
 #define BTTRACKER_BUF 2048
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(StringVal, zeek);
+namespace zeek { class StringVal; }
 
 namespace zeek::analyzer::bittorrent {
 

@@ -5,10 +5,11 @@
 #include "zeek/input/ReaderBackend.h"
 #include "zeek/threading/SerialTypes.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(EnumVal, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Manager, zeek, input);
+namespace zeek { class EnumVal; }
 
 namespace zeek::input {
+
+class Manager;
 
 /**
  * Bridge class between the input::Manager and backend input threads. The

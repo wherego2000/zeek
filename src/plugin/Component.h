@@ -5,7 +5,7 @@
 #include "zeek/zeek-config.h"
 #include <string>
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(ODesc, zeek);
+namespace zeek { class ODesc; }
 
 namespace zeek::plugin {
 namespace component {

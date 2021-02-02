@@ -5,17 +5,17 @@
 #include "zeek/zeek-config.h"
 #include "zeek/Tag.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(EnumVal, zeek);
+namespace zeek { class EnumVal; }
 
 namespace zeek::plugin {
 	template <class T> class TaggedComponent;
 	template <class T, class C> class ComponentManager;
 }
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(Manager, zeek, input);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Component, zeek, input);
-
 namespace zeek::input {
+
+class Manager;
+class Component;
 
 /**
  * Class to identify a reader type.

@@ -4,13 +4,14 @@
 
 #include "zeek/TraverseTypes.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(Func, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Scope, zeek::detail);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Stmt, zeek::detail);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Expr, zeek::detail);
-ZEEK_FORWARD_DECLARE_NAMESPACED(ID, zeek::detail);
+namespace zeek { class Func; }
 
 namespace zeek::detail {
+
+class Scope;
+class Stmt;
+class Expr;
+class ID;
 
 class TraversalCallback {
 public:

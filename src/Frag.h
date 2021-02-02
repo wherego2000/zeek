@@ -10,12 +10,17 @@
 #include "zeek/Reassem.h"
 #include "zeek/Timer.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(NetSessions, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(IP_Hdr, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(FragReassembler, zeek::detail);
-ZEEK_FORWARD_DECLARE_NAMESPACED(FragTimer, zeek::detail);
+namespace zeek {
+
+class NetSessions;
+class IP_Hdr;
+
+} // namespace zeek
 
 namespace zeek::detail {
+
+class FragReassembler;
+class FragTimer;
 
 using FragReassemblerKey = std::tuple<IPAddr, IPAddr, bro_uint_t>;
 

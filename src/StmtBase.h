@@ -12,17 +12,17 @@
 #include "zeek/TraverseTypes.h"
 #include "zeek/util.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(CompositeHash, zeek::detail);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Frame, zeek::detail);
-
-namespace zeek::run_state { extern double network_time; }
-
 namespace zeek {
+
 class Val;
 using ValPtr = IntrusivePtr<Val>;
-}
 
-namespace zeek::detail {
+namespace run_state { extern double network_time; }
+
+namespace detail {
+
+class CompositeHash;
+class Frame;
 
 class ExprStmt;
 class ForStmt;
@@ -176,4 +176,5 @@ protected:
 	StmtPtr original = nullptr;
 };
 
-} // namespace zeek::detail
+} // namespace detail
+} // namespace zeek

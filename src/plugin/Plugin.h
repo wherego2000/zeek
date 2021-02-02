@@ -17,20 +17,21 @@
 
 #define BRO_PLUGIN_BRO_VERSION BRO_VERSION_FUNCTION
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(ODesc, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Event, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Func, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Frame, zeek::detail);
-
-namespace zeek::threading {
-	struct Field;
-}
+namespace zeek::threading { struct Field; }
 
 namespace zeek {
+
+class ODesc;
+class Event;
+class Func;
+class Obj;
+
 template <class T> class IntrusivePtr;
 using ValPtr = IntrusivePtr<Val>;
-class Obj;
-}
+
+namespace detail { class Frame; }
+
+} // namespace zeek
 
 namespace zeek::plugin  {
 

@@ -13,7 +13,7 @@
 #include "zeek/ID.h"
 #include "zeek/util.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(TypeDecl, zeek);
+namespace zeek { class TypeDecl; }
 
 namespace zeek::zeekygen::detail {
 

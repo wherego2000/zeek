@@ -10,14 +10,16 @@
 #include "zeek/Reporter.h"
 #include "zeek/analyzer/Analyzer.h"
 
-ZEEK_FORWARD_DECLARE_NAMESPACED(TableVal, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(StringVal, zeek);
-ZEEK_FORWARD_DECLARE_NAMESPACED(Base64Converter, zeek::detail);
-
 namespace zeek {
+
+class TableVal;
+class StringVal;
 using TableValPtr = IntrusivePtr<TableVal>;
 using StringValPtr = IntrusivePtr<StringVal>;
-}
+
+namespace detail { class Base64Converter; }
+
+} // namespace zeek
 
 namespace zeek::analyzer::mime {
 
