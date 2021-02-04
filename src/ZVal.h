@@ -54,7 +54,6 @@ union ZVal {
 	// Resets the notion of low-level-error-occurred.
 	static void ClearZValErrorStatus()	{ zval_error_status = false; }
 
-private:
 	friend void DeleteManagedType(ZVal& v);
 
 	// Used for bool, int, enum.
